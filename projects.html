@@ -30,27 +30,22 @@
     <hr>
     <section id="manipulation">
       <h2 class="group">Manipulation &amp; Planning</h2>
-      <article class="project" id="tamp">
-        <h3>Task and Motion Planning for Mobile Manipulation with LLMs</h3>
-        <p class="tags">LLMs · Task and Motion Planning · Kinematics · Perception · PyBullet</p>
-        <p>Built a simulation framework from the ground up in PyBullet to study Task and Motion Planning (TAMP) on a mobile manipulator. A Clearpath Husky base with a Franka Panda arm executes multi-step language instructions by combining LLM-based task planning with end-effector camera perception and IK motion execution.</p>
-        <p>The system reliably picked single cubes and stacked two cubes, while stacking more cubes exposed challenges in motion smoothness, base drift, and grasp retries. The project showed how symbolic task planning can be combined with continuous control, and pointed to richer perception, collision-aware motion planning, and feedback-driven correction as the next steps toward general-purpose mobile manipulation.</p>
-        <div class="media">
-          <figure><iframe src="https://drive.google.com/file/d/1r0ry48lVDTxldfucFRYnrUPfph0bc30e/preview" loading="lazy" title="Picking one cube and stacking two cubes" allow="autoplay" allowfullscreen></iframe><figcaption>Picking one cube and stacking two cubes</figcaption></figure>
-          <figure><img src="images/projects/tamp-husky-panda.png" alt="Husky + Franka Panda platform" loading="lazy" decoding="async" class="contain"><figcaption>Husky + Franka Panda platform</figcaption></figure>
-        </div>
-        <div class="links"><a href="https://drive.google.com/file/d/1rgxZqGLinkX4re_l5X6LzL0JNABEn9aZ/view?usp=sharing" target="_blank" rel="noopener">Report</a></div>
-      </article>
       <article class="project" id="llm-planning">
-        <h3>LLM-Based Path Planning in Grid Worlds: Local and Global Policies vs. A*</h3>
-        <p class="tags">LLMs · A* Search · Hybrid Planning · Grid Navigation</p>
-        <p>A study of how well LLMs can plan paths in grid worlds. Vanilla local policies reached about 60% success on A*-solvable cases, while vanilla global one-shot planning reached only about 25% and degraded faster as obstacle density increased, showing that step-by-step local prompting is more robust.</p>
-        <p>I then explored improvements through richer local context (5×5 windows, clearance features), prompt refinements (few-shot examples, ranking), and hybrids with classical priors (subgoal induction, A* cost-to-go), to assess how far LLM-based planning can be pushed toward the reliability robots need.</p>
+        <h3>How Well Can LLMs Plan for Robots? From Grid-World Navigation to Mobile Manipulation</h3>
+        <p class="tags">LLMs · Task and Motion Planning · A* Search · Kinematics · Perception · PyBullet</p>
+        <p>A two-part study of large language models as robot planners: first as path planners in grid worlds, where they can be compared directly against classical search, and then as high-level task planners inside a full task and motion planning (TAMP) pipeline for a mobile manipulator.</p>
+        <p><strong style="font-weight:700">Path planning in grid worlds.</strong> I compared LLM planning policies against an A* baseline. Vanilla local policies, which choose one step at a time, reached about 60% success on A*-solvable cases, while vanilla global one-shot planning reached only about 25% and degraded faster as obstacle density increased, showing that step-by-step local prompting is more robust. I then explored improvements through richer local context (5×5 windows, clearance features), prompt refinements (few-shot examples, ranking), and hybrids with classical priors (subgoal induction, A* cost-to-go).</p>
         <div class="media wide">
           <figure><img src="images/projects/llm-planning-comparison.png" alt="Global, local and A* policies with 21 random obstacles" loading="lazy" decoding="async"><figcaption>Global, local and A* policies with 21 random obstacles</figcaption></figure>
           <figure><img src="images/projects/llm-planning-summary.png" alt="Aggregate results" loading="lazy" decoding="async"><figcaption>Aggregate results</figcaption></figure>
         </div>
-        <div class="links"><a href="https://drive.google.com/file/d/1nLylP_ADnhbF5E9aqVWqI_i2cX0_MuyO/view?usp=sharing" target="_blank" rel="noopener">Report</a></div>
+        <p><strong style="font-weight:700">Task and motion planning for mobile manipulation.</strong> I built a simulation framework from the ground up in PyBullet in which a Clearpath Husky base with a Franka Panda arm executes multi-step language instructions, combining LLM-based task planning with end-effector camera perception and IK motion execution. The system reliably picked single cubes and stacked two cubes, while stacking more cubes exposed challenges in motion smoothness, base drift, and grasp retries.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1r0ry48lVDTxldfucFRYnrUPfph0bc30e/preview" loading="lazy" title="Picking one cube and stacking two cubes" allow="autoplay" allowfullscreen></iframe><figcaption>Picking one cube and stacking two cubes</figcaption></figure>
+          <figure><img src="images/projects/tamp-husky-panda.png" alt="Husky + Franka Panda platform" loading="lazy" decoding="async" class="contain"><figcaption>Husky + Franka Panda platform</figcaption></figure>
+        </div>
+        <p>Together, the two studies show that LLMs are useful for high-level, symbolic decisions but need classical planning, grounded perception, and feedback-driven correction to reach the reliability robots need.</p>
+        <div class="links"><a href="https://drive.google.com/file/d/1nLylP_ADnhbF5E9aqVWqI_i2cX0_MuyO/view?usp=sharing" target="_blank" rel="noopener">Report: Path Planning</a><a href="https://drive.google.com/file/d/1rgxZqGLinkX4re_l5X6LzL0JNABEn9aZ/view?usp=sharing" target="_blank" rel="noopener">Report: Mobile Manipulation</a></div>
       </article>
       <article class="project" id="rrt-arm">
         <h3>Motion Planning for a 3-Link Robot Arm</h3>
