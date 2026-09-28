@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Waleed Bin Khalid</title>
+  <meta name="description" content="Robotics projects by Waleed Bin Khalid in manipulation, planning, robot learning, navigation, and perception.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <h1 class="name">Waleed Bin Khalid</h1>
+      <nav class="nav" aria-label="Primary">
+      <a href="index.html">About Me</a>
+      <a href="index.html#research">Research</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="https://github.com/waleedbkhalid" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=bO4gy1kAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/wbk99/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:wakhalid@iu.edu">Email</a>
+    </nav>
+    </header>
+    <hr>
+
+    <p class="page-intro">Course and personal projects from my M.S. at Georgia Tech and B.S. at Habib University. For publications, see the <a href="index.html#research">Research</a> section.</p>
+    <nav class="toc" aria-label="Project categories"><a href="#manipulation">Manipulation &amp; Planning</a> <a href="#learning">Robot Learning</a> <a href="#navigation">Navigation &amp; Perception</a> <a href="#earlier">Earlier Projects</a></nav>
+
+    <hr>
+    <section id="manipulation">
+      <h2 class="group">Manipulation &amp; Planning</h2>
+      <article class="project" id="tamp">
+        <h3>Task and Motion Planning for Mobile Manipulation with LLMs</h3>
+        <p class="tags">LLMs · Task and Motion Planning · Kinematics · Perception · PyBullet</p>
+        <p>Built a simulation framework from the ground up in PyBullet to study Task and Motion Planning (TAMP) on a mobile manipulator. A Clearpath Husky base with a Franka Panda arm executes multi-step language instructions by combining LLM-based task planning with end-effector camera perception and IK motion execution.</p>
+        <p>The system reliably picked single cubes and stacked two cubes, while stacking more cubes exposed challenges in motion smoothness, base drift, and grasp retries. The project showed how symbolic task planning can be combined with continuous control, and pointed to richer perception, collision-aware motion planning, and feedback-driven correction as the next steps toward general-purpose mobile manipulation.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1r0ry48lVDTxldfucFRYnrUPfph0bc30e/preview" loading="lazy" title="Picking one cube and stacking two cubes" allow="autoplay" allowfullscreen></iframe><figcaption>Picking one cube and stacking two cubes</figcaption></figure>
+          <figure><img src="images/projects/tamp-husky-panda.png" alt="Husky + Franka Panda platform" loading="lazy" decoding="async" class="contain"><figcaption>Husky + Franka Panda platform</figcaption></figure>
+        </div>
+        <div class="links"><a href="https://drive.google.com/file/d/1rgxZqGLinkX4re_l5X6LzL0JNABEn9aZ/view?usp=sharing" target="_blank" rel="noopener">Report</a></div>
+      </article>
+      <article class="project" id="llm-planning">
+        <h3>LLM-Based Path Planning in Grid Worlds: Local and Global Policies vs. A*</h3>
+        <p class="tags">LLMs · A* Search · Hybrid Planning · Grid Navigation</p>
+        <p>A study of how well LLMs can plan paths in grid worlds. Vanilla local policies reached about 60% success on A*-solvable cases, while vanilla global one-shot planning reached only about 25% and degraded faster as obstacle density increased, showing that step-by-step local prompting is more robust.</p>
+        <p>I then explored improvements through richer local context (5×5 windows, clearance features), prompt refinements (few-shot examples, ranking), and hybrids with classical priors (subgoal induction, A* cost-to-go), to assess how far LLM-based planning can be pushed toward the reliability robots need.</p>
+        <div class="media wide">
+          <figure><img src="images/projects/llm-planning-comparison.png" alt="Global, local and A* policies with 21 random obstacles" loading="lazy" decoding="async"><figcaption>Global, local and A* policies with 21 random obstacles</figcaption></figure>
+          <figure><img src="images/projects/llm-planning-summary.png" alt="Aggregate results" loading="lazy" decoding="async"><figcaption>Aggregate results</figcaption></figure>
+        </div>
+        <div class="links"><a href="https://drive.google.com/file/d/1nLylP_ADnhbF5E9aqVWqI_i2cX0_MuyO/view?usp=sharing" target="_blank" rel="noopener">Report</a></div>
+      </article>
+      <article class="project" id="rrt-arm">
+        <h3>Motion Planning for a 3-Link Robot Arm</h3>
+        <p class="tags">RRT · Forward and Inverse Kinematics · PID · PyGame</p>
+        <p>Implemented RRT from scratch with custom collision checks to move a 3-link arm around obstacles and walls, along with forward and inverse kinematics to compute path variables. Simulated the robot in PyGame, tuned the RRT and PID parameters across configurations, and built demos showing wrist limits, reachable workspace, and RRT performance.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1DMkUcLMCuf9Du0XBSZsFXjX6xKAv4m9P/preview" loading="lazy" title="Demo 1" allow="autoplay" allowfullscreen></iframe><figcaption>Demo 1</figcaption></figure>
+          <figure><iframe src="https://drive.google.com/file/d/1eEWxbQ86DElDh5YCCFBxD5U2d-hK9GD8/preview" loading="lazy" title="Demo 2" allow="autoplay" allowfullscreen></iframe><figcaption>Demo 2</figcaption></figure>
+        </div>
+        <div class="links"><a href="https://drive.google.com/file/d/1-w0aCibfOu3rsvo1NARajqhJBNuo_Cs2/view" target="_blank" rel="noopener">Project Report</a></div>
+      </article>
+    </section>
+
+    <hr>
+    <section id="learning">
+      <h2 class="group">Robot Learning</h2>
+      <article class="project" id="diffusion">
+        <h3>Diffusion Model as a Robot Action Policy</h3>
+        <p class="tags">Imitation Learning · Diffusion Policy · Push-T</p>
+        <p>Trained a diffusion model on demonstrations to model the action distribution given the state, reaching 100% success in guiding a point agent to push a T-shaped block onto a T-shaped target.</p>
+        <div class="media square">
+          <figure><iframe src="https://drive.google.com/file/d/1ShYIWfRgEG_byB5lhU0caR3iy0hzhxL_/preview" loading="lazy" title="Rollout 1" allow="autoplay" allowfullscreen></iframe><figcaption>Rollout 1</figcaption></figure>
+          <figure><iframe src="https://drive.google.com/file/d/1FnWnpkCPviuyjgxSR91XiT4lEQY6ZkI5/preview" loading="lazy" title="Rollout 2" allow="autoplay" allowfullscreen></iframe><figcaption>Rollout 2</figcaption></figure>
+          <figure><iframe src="https://drive.google.com/file/d/1zlsUKLyPN4H47rNCSMEwWLrovdPQuLn9/preview" loading="lazy" title="Rollout 3" allow="autoplay" allowfullscreen></iframe><figcaption>Rollout 3</figcaption></figure>
+        </div>
+      </article>
+      <article class="project" id="videos">
+        <h3>Learning Robot Tasks from Videos</h3>
+        <p class="tags">Reinforcement and Imitation Learning · Transformers · ManiSkill2</p>
+        <p>Studied manipulator control with reinforcement and imitation learning using MLPs, CNNs, and transformers on ManiSkill2. A transformer-encoder behavior-cloning policy reduced covariate shift on a Franka Panda pick-and-place task, reaching 20% full success with 80% of episodes completing either the pick or the place. A PPO policy reached 100% success on a selected task.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1ST4gQUVq2VMVshvh5eF5Bj4kHOdr9UXL/preview" loading="lazy" title="Manipulation rollouts" allow="autoplay" allowfullscreen></iframe><figcaption>Manipulation rollouts</figcaption></figure>
+        </div>
+        <div class="links"><a href="https://drive.google.com/drive/folders/1T5tiQO0bLbTUItd1noYc_CKOu-KPxBBm" target="_blank" rel="noopener">Report</a></div>
+      </article>
+      <article class="project" id="mujoco">
+        <h3>Legged and Humanoid Robot Control in MuJoCo</h3>
+        <p class="tags">Reinforcement Learning · Curriculum Learning · Imitation Learning</p>
+        <p>Trained a quadruped with RL, curriculum learning, and custom rewards to walk over obstacles of increasing height, and trained two humanoid walking styles (normal and stealthy) with imitation learning and reference state initialization.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1I58gJm3NWNfTmiC7EQd0LxJidSJRdBum/preview" loading="lazy" title="Quadruped and humanoid results" allow="autoplay" allowfullscreen></iframe><figcaption>Quadruped and humanoid results</figcaption></figure>
+        </div>
+      </article>
+      <article class="project" id="cartpole">
+        <h3>CartPole Control using Deep Reinforcement Learning</h3>
+        <p class="tags">DQN · DDQN · Dueling DDQN · CNN-DQN · PPO</p>
+        <p>A comparison of Deep Q-learning variants and PPO on CartPole in OpenAI Gym. PPO and DDQN reached the maximum score of 500 across 100 episodes, CNN-DQN struggled to converge, and PPO was the most stable because its clipped updates prevent drastic policy changes.</p>
+        <div class="media">
+          <figure><iframe src="https://www.youtube.com/embed/aSomRKi8ldk" loading="lazy" title="Trained policies" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>Trained policies</figcaption></figure>
+        </div>
+        <div class="links"><a href="https://drive.google.com/file/d/1pXP1s9iPr3aNRjS65cGPXwxlBu6W9ra-/view" target="_blank" rel="noopener">Report</a></div>
+      </article>
+    </section>
+
+    <hr>
+    <section id="navigation">
+      <h2 class="group">Navigation &amp; Perception</h2>
+      <article class="project" id="maze">
+        <h3>Robot Maze Navigation for Variable Maze Structures</h3>
+        <p class="tags">ROS 2 · CNNs · Path Planning · PID</p>
+        <p>Navigated unknown mazes by combining the Bug algorithm, lidar-based collision avoidance, and a CNN that reads direction signs, so the solution works regardless of maze layout, start, and goal. The sign classifier reached 99% accuracy with augmentation and preprocessing, and PID control handled straight-line driving and sharp turns, for 100% navigation success.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1b4P67eACJC3HYH3cS7nW_fX0XIY0ffdR/preview" loading="lazy" title="Maze run" allow="autoplay" allowfullscreen></iframe><figcaption>Maze run</figcaption></figure>
+        </div>
+      </article>
+      <article class="project" id="slam">
+        <h3>SLAM using TurtleBot3 and ROS 2</h3>
+        <p class="tags">Python · ROS 2 · Cartographer SLAM</p>
+        <p>Built 2D maps by teleoperating a TurtleBot3 in both a physical arena and Gazebo using Cartographer, then tuned the ROS 2 navigation stack so the robot could autonomously reach three random goals in a 7×6 ft arena with barriers.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1UNlL5XAsnarwNPedrqDOrBz3KvxB1QFK/preview" loading="lazy" title="Hardware" allow="autoplay" allowfullscreen></iframe><figcaption>Hardware</figcaption></figure>
+          <figure><iframe src="https://drive.google.com/file/d/1UNWeqgoI5wbZBJh4Q5skkoUk7QLhszl_/preview" loading="lazy" title="Simulation" allow="autoplay" allowfullscreen></iframe><figcaption>Simulation</figcaption></figure>
+        </div>
+      </article>
+      <article class="project" id="road-seg">
+        <h3>Road Image Segmentation with Supervised and Unsupervised Methods</h3>
+        <p class="tags">U-Net · K-Means · DBSCAN · Gaussian Mixture Models · CARLA</p>
+        <p>Compared K-Means, DBSCAN, Gaussian Mixture Models, and U-Net for segmenting road images from CARLA. U-Net reached a 95% Dice score, and K-Means and GMMs reached a silhouette coefficient of 0.5.</p>
+        <div class="media">
+          <figure><img src="images/projects/road-seg-input.png" alt="Input image" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure>
+          <figure><img src="images/projects/road-seg-ground-truth.png" alt="Ground-truth mask" loading="lazy" decoding="async"><figcaption>Ground-truth mask</figcaption></figure>
+          <figure><img src="images/projects/road-seg-prediction.png" alt="U-Net prediction" loading="lazy" decoding="async"><figcaption>U-Net prediction</figcaption></figure>
+        </div>
+        <div class="links"><a href="https://drive.google.com/file/d/1VQ_T2tJRXxCKPTw_OntqRXtBdwHXfxGX/view" target="_blank" rel="noopener">Report</a></div>
+      </article>
+      <article class="project" id="pedestrians">
+        <h3>Pedestrian Behaviour Classification</h3>
+        <p class="tags">Faster R-CNN · Transfer Learning (VGG16)</p>
+        <p>Built a pedestrian dataset from several sources, labeled as distracted or not distracted. Faster R-CNN detected every pedestrian in the test set, and a VGG16 transfer-learning classifier identified distraction with 90% accuracy.</p>
+        <div class="media">
+          <figure><img src="images/projects/pedestrian-detection.png" alt="Detection" loading="lazy" decoding="async"><figcaption>Detection</figcaption></figure>
+          <figure><img src="images/projects/pedestrian-phone-use.png" alt="Phone use" loading="lazy" decoding="async"><figcaption>Phone use</figcaption></figure>
+          <figure><img src="images/projects/pedestrian-distraction.png" alt="Distraction classification" loading="lazy" decoding="async"><figcaption>Distraction classification</figcaption></figure>
+        </div>
+        <div class="links"><a href="https://drive.google.com/file/d/1ZwmTaNE6NLHYxsfXNvn2XleH-8ChQ3_c/view" target="_blank" rel="noopener">Report</a></div>
+      </article>
+    </section>
+
+    <hr>
+    <section id="earlier">
+      <h2 class="group">Earlier Projects</h2>
+      <article class="project" id="line-follower">
+        <h3>Autonomous Line-Following Ball-Throwing Robot</h3>
+        <p class="tags">Arduino · IR Sensors · Encoders · Differential Drive · PID</p>
+        <p>Built a differential-drive robot with an Arduino, IR sensors, and self-made motor drivers and regulators, plus a flywheel launcher. Calibrated encoders for accurate odometry so the robot could follow lines around a 4×8 ft arena and drop balls into four hoops within three minutes.</p>
+        <div class="media">
+          <figure><iframe src="https://www.youtube.com/embed/aBi1eaDylxo?start=6" loading="lazy" title="Competition run" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>Competition run</figcaption></figure>
+        </div>
+      </article>
+      <article class="project" id="game">
+        <h3>HAWAI FIRING: A Shooting Game in C++</h3>
+        <p class="tags">C++ · SDL 2.0 · Object-Oriented Design · UML</p>
+        <p>A bubble-shooting game written from scratch in C++ with SDL 2.0 to practice object-oriented design and maintainable code, with multiple levels, menus, saving, kinematics-based physics, and collision detection.</p>
+        <div class="media">
+          <figure><iframe src="https://drive.google.com/file/d/1T82pM_7SujElT25AcSfwum1NO_sINBIn/preview" loading="lazy" title="Gameplay" allow="autoplay" allowfullscreen></iframe><figcaption>Gameplay</figcaption></figure>
+        </div>
+      </article>
+    </section>
+
+    <hr>
+    <footer>© 2026 Waleed Bin Khalid · Last updated September 2026</footer>
+  </div>
+</body>
+</html>
