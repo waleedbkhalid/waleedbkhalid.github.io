@@ -117,3 +117,59 @@ h2.group { margin: 26px 0 4px; }
 .links { font-size: 15px; }
 .links a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; margin-right: 12px; }
 .links a:hover { color: var(--ink); }
+
+/* Work page */
+.role-head { display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: center; margin: 22px 0 18px; }
+.role-logo { display: flex; align-items: center; justify-content: center; height: 80px; border: 1px solid var(--rule); border-radius: 8px; background: #fff; padding: 10px; }
+.role-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.role-title { margin: 0 0 2px; }
+.role-meta { margin: 0 0 6px; color: var(--muted); font-style: italic; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 6px 0 22px; }
+.stat { border-left: 2px solid var(--accent); padding: 4px 0 4px 12px; }
+.stat .num { display: block; font-size: 24px; font-weight: 700; line-height: 1.2; }
+.stat .label { display: block; color: var(--muted); font-size: 14px; }
+h3.sub { margin: 22px 0 6px; font-size: 19px; font-weight: 700; }
+.features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 8px 0 6px; }
+.feature { background: #fafafa; border: 1px solid #ececec; border-radius: 8px; padding: 14px 16px; }
+.feature h4 { margin: 0 0 4px; font-size: 16px; font-weight: 700; }
+.feature p { margin: 0; font-size: 15px; }
+.arch { border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px 16px; margin: 8px 0 6px; }
+.arch-host { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 10px; }
+.arch-flow { display: flex; align-items: stretch; justify-content: space-between; gap: 6px; }
+.arch-node { flex: 1 1 0; min-width: 0; text-align: center; border: 1px solid var(--accent); border-radius: 6px; padding: 8px 6px; background: #fff; }
+.arch-node b { display: block; font-size: 15px; }
+.arch-node span { display: block; font-size: 12.5px; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+.arch-arrow { align-self: center; color: var(--accent); font-size: 18px; }
+ul.tags-list { list-style: none; padding: 0; margin: 6px 0 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+ul.tags-list li { border: 1px solid var(--rule); border-radius: 999px; padding: 1px 10px; font-size: 14px; }
+@media (max-width: 620px) {
+  .role-head { grid-template-columns: 1fr; }
+  .role-logo { width: 140px; }
+  .stats { grid-template-columns: 1fr; }
+  .features { grid-template-columns: 1fr; }
+  .arch-flow { flex-direction: column; }
+  .arch-arrow { transform: rotate(90deg); }
+}
+.arch-side { margin: 10px 0 0; font-size: 13.5px; color: var(--muted); }
+.flow { border: 1px solid var(--rule); border-radius: 8px; padding: 14px; margin: 8px 0 6px; }
+.flow-row { display: flex; align-items: center; gap: 8px; }
+.state { border: 1px solid var(--rule); border-radius: 6px; padding: 7px 10px; background: #fff; text-align: center; font-size: 15px; }
+.state small { display: block; font-size: 12.5px; color: var(--muted); }
+.state-key { border-color: var(--accent); font-weight: 700; }
+.state-good { border-color: var(--accent); background: #fbf4f5; }
+.state-group { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.flow-note { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+ol.steps { margin: 4px 0 12px; padding-left: 22px; }
+ol.steps li { margin-bottom: 6px; }
+@media (max-width: 620px) {
+  .flow-row { flex-direction: column; align-items: stretch; }
+  .flow-row > .arch-arrow { align-self: center; transform: rotate(90deg); }
+}
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 8px 0 4px; }
+.shots figure { margin: 0; }
+.shots img { display: block; width: 100%; aspect-ratio: 768 / 889; object-fit: cover; object-position: top; border: 1px solid #e3e3e3; border-radius: 6px; background: #fafafa; }
+.shots figure.phone img { object-fit: contain; }
+.shots figcaption { margin-top: 5px; font-size: 13.5px; color: var(--muted); line-height: 1.35; }
+.shots-note { font-size: 13px; color: var(--muted); font-style: italic; margin: 4px 0 0; }
+@media (max-width: 620px) { .shots { grid-template-columns: repeat(2, 1fr); } }
+.pub .title.withheld { font-weight: 400; font-style: italic; color: var(--muted); }
