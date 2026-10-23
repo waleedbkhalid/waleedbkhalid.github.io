@@ -173,3 +173,11 @@ ol.steps li { margin-bottom: 6px; }
 .shots-note { font-size: 13px; color: var(--muted); font-style: italic; margin: 4px 0 0; }
 @media (max-width: 620px) { .shots { grid-template-columns: repeat(2, 1fr); } }
 .pub .title.withheld { font-weight: 400; font-style: italic; color: var(--muted); }
+
+/* Teaching page */
+.teach-photo { margin: 14px 0 4px; }
+.teach-photo img { display: block; width: 100%; max-width: 620px; border-radius: 6px; border: 1px solid #e3e3e3; }
+.teach-photo figcaption { margin-top: 5px; font-size: 13.5px; color: var(--muted); }
+.when-inline { font-weight: 400; font-size: 16px; color: var(--muted); }
+.course-list { margin: 8px 0 4px; border-left: 2px solid var(--accent); padding-left: 12px; }
+.course-list .row { margin-bottom: 4px; }
