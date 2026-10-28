@@ -38,13 +38,13 @@
         <p>A two-part study of large language models as robot planners: first as path planners in grid worlds, where they can be compared directly against classical search, and then as high-level task planners inside a full task and motion planning (TAMP) pipeline for a mobile manipulator.</p>
         <p><strong style="font-weight:700">Path planning in grid worlds.</strong> I compared LLM planning policies against an A* baseline. Vanilla local policies, which choose one step at a time, reached about 60% success on A*-solvable cases, while vanilla global one-shot planning reached only about 25% and degraded faster as obstacle density increased, showing that step-by-step local prompting is more robust. I then explored improvements through richer local context (5×5 windows, clearance features), prompt refinements (few-shot examples, ranking), and hybrids with classical priors (subgoal induction, A* cost-to-go).</p>
         <div class="media wide">
-          <figure><img src="images/projects/llm-planning-comparison.png" alt="Global, local and A* policies with 21 random obstacles" loading="lazy" decoding="async"><figcaption>Global, local and A* policies with 21 random obstacles</figcaption></figure>
-          <figure><img src="images/projects/llm-planning-summary.png" alt="Aggregate results" loading="lazy" decoding="async"><figcaption>Aggregate results</figcaption></figure>
+          <figure><a href="images/projects/llm-planning-comparison.png" target="_blank" rel="noopener"><img src="images/projects/llm-planning-comparison.png" alt="Global, local and A* policies with 21 random obstacles" loading="lazy" decoding="async"></a><figcaption>Global, local and A* policies with 21 random obstacles</figcaption></figure>
+          <figure><a href="images/projects/llm-planning-summary.png" target="_blank" rel="noopener"><img src="images/projects/llm-planning-summary.png" alt="Aggregate results" loading="lazy" decoding="async"></a><figcaption>Aggregate results</figcaption></figure>
         </div>
         <p><strong style="font-weight:700">Task and motion planning for mobile manipulation.</strong> I built a simulation framework from the ground up in PyBullet in which a Clearpath Husky base with a Franka Panda arm executes multi-step language instructions, combining LLM-based task planning with end-effector camera perception and IK motion execution. The system reliably picked single cubes and stacked two cubes, while stacking more cubes exposed challenges in motion smoothness, base drift, and grasp retries.</p>
         <div class="media">
           <figure><iframe src="https://drive.google.com/file/d/1r0ry48lVDTxldfucFRYnrUPfph0bc30e/preview" loading="lazy" title="Picking one cube and stacking two cubes" allow="autoplay" allowfullscreen></iframe><figcaption>Picking one cube and stacking two cubes</figcaption></figure>
-          <figure><img src="images/projects/tamp-husky-panda.png" alt="Husky + Franka Panda platform" loading="lazy" decoding="async" class="contain"><figcaption>Husky + Franka Panda platform</figcaption></figure>
+          <figure><a href="images/projects/tamp-husky-panda.png" target="_blank" rel="noopener"><img src="images/projects/tamp-husky-panda.png" alt="Husky + Franka Panda platform" loading="lazy" decoding="async" class="contain"></a><figcaption>Husky + Franka Panda platform</figcaption></figure>
         </div>
         <p>Together, the two studies show that LLMs are useful for high-level, symbolic decisions but need classical planning, grounded perception, and feedback-driven correction to reach the reliability robots need.</p>
         <div class="links"><a href="https://drive.google.com/file/d/1nLylP_ADnhbF5E9aqVWqI_i2cX0_MuyO/view?usp=sharing" target="_blank" rel="noopener">Report: Path Planning</a><a href="https://drive.google.com/file/d/1rgxZqGLinkX4re_l5X6LzL0JNABEn9aZ/view?usp=sharing" target="_blank" rel="noopener">Report: Mobile Manipulation</a></div>
@@ -135,9 +135,9 @@
         <p class="tags">U-Net · K-Means · DBSCAN · Gaussian Mixture Models · CARLA</p>
         <p>Compared K-Means, DBSCAN, Gaussian Mixture Models, and U-Net for segmenting road images from CARLA. U-Net reached a 95% Dice score, and K-Means and GMMs reached a silhouette coefficient of 0.5.</p>
         <div class="media">
-          <figure><img src="images/projects/road-seg-input.png" alt="Input image" loading="lazy" decoding="async"><figcaption>Input image</figcaption></figure>
-          <figure><img src="images/projects/road-seg-ground-truth.png" alt="Ground-truth mask" loading="lazy" decoding="async"><figcaption>Ground-truth mask</figcaption></figure>
-          <figure><img src="images/projects/road-seg-prediction.png" alt="U-Net prediction" loading="lazy" decoding="async"><figcaption>U-Net prediction</figcaption></figure>
+          <figure><a href="images/projects/road-seg-input.png" target="_blank" rel="noopener"><img src="images/projects/road-seg-input.png" alt="Input image" loading="lazy" decoding="async"></a><figcaption>Input image</figcaption></figure>
+          <figure><a href="images/projects/road-seg-ground-truth.png" target="_blank" rel="noopener"><img src="images/projects/road-seg-ground-truth.png" alt="Ground-truth mask" loading="lazy" decoding="async"></a><figcaption>Ground-truth mask</figcaption></figure>
+          <figure><a href="images/projects/road-seg-prediction.png" target="_blank" rel="noopener"><img src="images/projects/road-seg-prediction.png" alt="U-Net prediction" loading="lazy" decoding="async"></a><figcaption>U-Net prediction</figcaption></figure>
         </div>
         <div class="links"><a href="https://drive.google.com/file/d/1VQ_T2tJRXxCKPTw_OntqRXtBdwHXfxGX/view" target="_blank" rel="noopener">Report</a></div>
       </article>
@@ -146,9 +146,9 @@
         <p class="tags">Faster R-CNN · Transfer Learning (VGG16)</p>
         <p>Built a pedestrian dataset from several sources, labeled as distracted or not distracted. Faster R-CNN detected every pedestrian in the test set, and a VGG16 transfer-learning classifier identified distraction with 90% accuracy.</p>
         <div class="media">
-          <figure><img src="images/projects/pedestrian-detection.png" alt="Detection" loading="lazy" decoding="async"><figcaption>Detection</figcaption></figure>
-          <figure><img src="images/projects/pedestrian-phone-use.png" alt="Phone use" loading="lazy" decoding="async"><figcaption>Phone use</figcaption></figure>
-          <figure><img src="images/projects/pedestrian-distraction.png" alt="Distraction classification" loading="lazy" decoding="async"><figcaption>Distraction classification</figcaption></figure>
+          <figure><a href="images/projects/pedestrian-detection.png" target="_blank" rel="noopener"><img src="images/projects/pedestrian-detection.png" alt="Detection" loading="lazy" decoding="async"></a><figcaption>Detection</figcaption></figure>
+          <figure><a href="images/projects/pedestrian-phone-use.png" target="_blank" rel="noopener"><img src="images/projects/pedestrian-phone-use.png" alt="Phone use" loading="lazy" decoding="async"></a><figcaption>Phone use</figcaption></figure>
+          <figure><a href="images/projects/pedestrian-distraction.png" target="_blank" rel="noopener"><img src="images/projects/pedestrian-distraction.png" alt="Distraction classification" loading="lazy" decoding="async"></a><figcaption>Distraction classification</figcaption></figure>
         </div>
         <div class="links"><a href="https://drive.google.com/file/d/1ZwmTaNE6NLHYxsfXNvn2XleH-8ChQ3_c/view" target="_blank" rel="noopener">Report</a></div>
       </article>

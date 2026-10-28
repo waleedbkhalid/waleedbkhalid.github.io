@@ -60,7 +60,9 @@ ul.plain li { margin-bottom: 6px; }
 
 /* Publications */
 .pub { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding: 12px 0; align-items: start; }
+.pub > a { display: block; text-decoration: none; }
 .pub img { width: 170px; height: 115px; object-fit: cover; display: block; border: 1px solid #e3e3e3; }
+.pub img.diagram { object-fit: contain; height: auto; background: #fff; }
 .pub .title { font-weight: 700; margin: 0 0 2px; }
 .pub .authors, .pub .venue { margin: 0 0 2px; font-size: 16px; }
 .pub .venue { font-style: italic; }
@@ -109,6 +111,8 @@ h2.group { margin: 26px 0 4px; }
 .media.wide { grid-template-columns: 1fr; }
 .media:has(> figure:only-child) { grid-template-columns: minmax(0, 540px); justify-content: center; }
 .media figure { margin: 0; }
+.media figure > a,
+.teach-photo > a { display: block; text-decoration: none; }
 .media iframe, .media img { display: block; width: 100%; aspect-ratio: 16 / 10; border: 1px solid #e3e3e3; background: #f4f4f4; object-fit: cover; }
 .media.square iframe { aspect-ratio: 1 / 1; }
 .media.wide img { aspect-ratio: auto; object-fit: contain; }
@@ -175,9 +179,9 @@ ol.steps li { margin-bottom: 6px; }
 .pub .title.withheld { font-weight: 400; font-style: italic; color: var(--muted); }
 
 /* Teaching page */
-.teach-photo { margin: 14px 0 4px; }
-.teach-photo img { display: block; width: 100%; max-width: 620px; border-radius: 6px; border: 1px solid #e3e3e3; }
-.teach-photo figcaption { margin-top: 5px; font-size: 13.5px; color: var(--muted); }
+.teach-photo { margin: 16px auto 8px; max-width: 420px; }
+.teach-photo img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid #e3e3e3; }
+.teach-photo figcaption { margin-top: 5px; font-size: 13.5px; color: var(--muted); text-align: center; }
 .when-inline { font-weight: 400; font-size: 16px; color: var(--muted); }
 .course-list { margin: 8px 0 4px; border-left: 2px solid var(--accent); padding-left: 12px; }
 .course-list .row { margin-bottom: 4px; }
