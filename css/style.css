@@ -55,8 +55,8 @@ a.text-link:hover { color: var(--accent); }
 .affil a.logo:hover img { opacity: .8; }
 
 /* Lists */
-ul.plain { margin: 0 0 14px; padding-left: 18px; }
-ul.plain li { margin-bottom: 6px; }
+ul.plain, ol.plain { margin: 0 0 14px; padding-left: 18px; }
+ul.plain li, ol.plain li { margin-bottom: 6px; }
 
 /* Publications */
 .pub { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding: 12px 0; align-items: start; }
